@@ -15,6 +15,7 @@ router.put("/updatestatus/:id",userController.updatestatus);
 router.get("/getsignup", userController.getsignup);
 router.put('/ai/:id/updateFilter', toolController.updateFilter);
 router.put('/updatetoolstatus/:id', toolController.updateAIStatus);
+router.get('/contacts',contactController.getAllContacts)
 // Define route for '/AI'
 router.get('/AI', toolController.getAI);
 router.delete('/deleteTool/:toolId', toolController.deleteTool);

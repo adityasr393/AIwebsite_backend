@@ -6,7 +6,7 @@ const AI = require('../schema/AIModel');
 exports.addTool = async (req, res) => {
   try {
     const { toolTitle, category, toolDescription, visitLink, firebaseImageUrl } = req.body;
-    const newTool = new Tool({ toolTitle, category, toolDescription, visitLink, firebaseImageUrl });
+    const newTool = new Tool({ toolTitle, category,pricingPrice,pricingType, toolDescription, visitLink, firebaseImageUrl });
     await newTool.save();
     res.status(201).json(newTool);
   } catch (error) {
@@ -75,6 +75,8 @@ exports.updateToolData = async (req, res) => {
     const updatedTool = await Tool.findByIdAndUpdate(toolId, {
       toolTitle,
       category,
+      pricingType,
+      pricingPrice,
       toolDescription,
       visitLink,
       firebaseImageUrl

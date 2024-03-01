@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const AISchema = new mongoose.Schema({
   toolTitle: String, // Change 'toolName' to 'toolTitle'
   toolDescription: String, // Change 'description' to 'toolDescription'
-  pricingType: String, // Change 'pricingTag' to 'pricingType'
+  pricingType: String,
+  pricingPrice:String, // Change 'pricingTag' to 'pricingType'
   visitLink: String,
   subcategory: String, // You can add or remove fields as needed
   logoImageUrl: String, // Add fields for logo and thumbnail image URLs if required

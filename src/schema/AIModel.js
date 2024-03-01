@@ -6,7 +6,7 @@ const AISchema = new mongoose.Schema({
   pricingType: String,
   pricingPrice:String, // Change 'pricingTag' to 'pricingType'
   visitLink: String,
-  subcategory: String, // You can add or remove fields as needed
+  category: String, // You can add or remove fields as needed
   logoImageUrl: String, // Add fields for logo and thumbnail image URLs if required
   thumbnailImageUrl: String,
   firebaseImageUrl: String ,// Add field for Firebase Storage URL
@@ -18,7 +18,7 @@ const AISchema = new mongoose.Schema({
   enum: ['new', 'popular', 'featured'], // Define enum values
   default: 'new' // Set default value to 'new'
 }
-}, { collection: 'your_collection_name' }); // Specify the collection name as 'AI'
+}, { collection: 'your_collection_name' ,timestamps:true}); // Specify the collection name as 'AI'
 
 const AI = mongoose.model('your_collection_name', AISchema);
 

@@ -7,6 +7,7 @@ exports.addTool = async (req, res) => {
   try {
     const { toolTitle, category,pricingPrice,pricingType, toolDescription, visitLink, firebaseImageUrl } = req.body;
     const newTool = new Tool({ toolTitle, category, pricingPrice, pricingType, toolDescription, visitLink, firebaseImageUrl });
+    console.log("",newTool)
     await newTool.save();
     res.status(201).json(newTool);
   } catch (error) {

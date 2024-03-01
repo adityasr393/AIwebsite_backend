@@ -7,8 +7,6 @@ const AISchema = new mongoose.Schema({
   pricingPrice:String, // Change 'pricingTag' to 'pricingType'
   visitLink: String,
   category: String, // You can add or remove fields as needed
-  logoImageUrl: String, // Add fields for logo and thumbnail image URLs if required
-  thumbnailImageUrl: String,
   firebaseImageUrl: String ,// Add field for Firebase Storage URL
   status:{
     type:Boolean,

@@ -7,7 +7,7 @@ exports.addTool = async (req, res) => {
   try {
     const { toolTitle, category,pricingPrice,pricingType, toolDescription, visitLink, firebaseImageUrl } = req.body;
     const newTool = new Tool({ toolTitle, category, pricingPrice, pricingType, toolDescription, visitLink, firebaseImageUrl });
-    console.log("",newTool)
+    console.log("",newTool);
     await newTool.save();
     res.status(201).json(newTool);
   } catch (error) {
@@ -72,7 +72,7 @@ exports.deleteTool = async (req, res) => {
 exports.updateToolData = async (req, res) => {
   try {
     const { toolId } = req.params;
-    const { toolTitle, category, toolDescription, visitLink, firebaseImageUrl } = req.body;
+    const { toolTitle, category,pricingPrice,pricingType, toolDescription, visitLink, firebaseImageUrl } = req.body;
     const updatedTool = await Tool.findByIdAndUpdate(toolId, {
       toolTitle,
       category,
